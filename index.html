@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContentHub - Premium Digital Downloads</title>
+    <meta name="description" content="Premium digital downloads including Netflix content, anime series, fonts, and creative assets. High-quality downloads for your projects.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <div class="brand">
+                    <h1 class="brand-logo" data-testid="brand-logo" onclick="scrollToSection('home')">
+                        <span class="brand-content">Content</span><span class="brand-hub">Hub</span>
+                    </h1>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="nav-desktop">
+                    <div class="nav-links">
+                        <button onclick="scrollToSection('home')" class="nav-link" data-testid="nav-home">Home</button>
+                        <button onclick="scrollToSection('netflix')" class="nav-link" data-testid="nav-netflix">Netflix</button>
+                        <button onclick="scrollToSection('anime')" class="nav-link" data-testid="nav-anime">Anime</button>
+                        <button onclick="scrollToSection('fonts')" class="nav-link" data-testid="nav-fonts">Fonts</button>
+                        <button onclick="scrollToSection('assets')" class="nav-link" data-testid="nav-assets">Assets</button>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="nav-mobile">
+                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" data-testid="button-mobile-menu">
+                        <span class="menu-icon" id="menu-icon">☰</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation Menu -->
+            <div class="mobile-menu" id="mobile-menu">
+                <div class="mobile-menu-content">
+                    <button onclick="scrollToSection('home')" class="mobile-nav-link" data-testid="mobile-nav-home">Home</button>
+                    <button onclick="scrollToSection('netflix')" class="mobile-nav-link" data-testid="mobile-nav-netflix">Netflix</button>
+                    <button onclick="scrollToSection('anime')" class="mobile-nav-link" data-testid="mobile-nav-anime">Anime</button>
+                    <button onclick="scrollToSection('fonts')" class="mobile-nav-link" data-testid="mobile-nav-fonts">Fonts</button>
+                    <button onclick="scrollToSection('assets')" class="mobile-nav-link" data-testid="mobile-nav-assets">Assets</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+            <div class="bg-blob bg-blob-1"></div>
+            <div class="bg-blob bg-blob-2"></div>
+            <div class="bg-blob bg-blob-3"></div>
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title" data-testid="hero-title">
+                Premium <span class="text-netflix-red">Digital</span><br />
+                <span class="text-cyber-blue">Downloads</span>
+            </h1>
+            <p class="hero-description" data-testid="hero-description">
+                Discover and download high-quality Netflix content, anime series, premium fonts, and digital assets. Everything you need for your creative projects.
+            </p>
+            <div class="hero-buttons">
+                <button onclick="scrollToSection('netflix')" class="btn btn-primary" data-testid="button-explore-downloads">
+                    <span class="btn-icon">⬇</span>
+                    Explore Downloads
+                </button>
+                <button onclick="watchPreview()" class="btn btn-secondary" data-testid="button-watch-preview">
+                    <span class="btn-icon">▶</span>
+                    Watch Preview
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Netflix Section -->
+    <section id="netflix" class="content-section bg-dark-secondary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-testid="section-title-netflix">
+                    <span class="text-netflix-red">Netflix</span> Collection
+                </h2>
+                <p class="section-subtitle" data-testid="section-subtitle-netflix">
+                    High-quality Netflix series and movies available for download. From trending shows to classic films.
+                </p>
+            </div>
+            
+            <div class="content-grid">
+                <div class="content-card" data-testid="card-netflix-1">
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&h=600" alt="Stranger Things S4" class="content-image" data-testid="img-netflix-1">
+                    <div class="content-info">
+                        <h3 class="content-title" data-testid="title-netflix-1">Stranger Things S4</h3>
+                        <p class="content-description" data-testid="description-netflix-1">Supernatural thriller series</p>
+                        <div class="content-actions">
+                            <span class="content-quality text-green" data-testid="quality-netflix-1">4K Ultra HD</span>
+                            <button onclick="downloadContent('1', 'Stranger Things S4')" class="btn btn-download btn-netflix" data-testid="button-download-netflix-1">
+                                <span class="btn-icon">⬇</span>
+                                <span class="btn-text">Download</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-card" data-testid="card-netflix-2">
+                    <img src="https://images.unsplash.com/photo-1489599142361-8fd07d2ceb8e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&h=600" alt="Money Heist" class="content-image" data-testid="img-netflix-2">
+                    <div class="content-info">
+                        <h3 class="content-title" data-testid="title-netflix-2">Money Heist</h3>
+                        <p class="content-description" data-testid="description-netflix-2">Spanish crime drama series</p>
+                        <div class="content-actions">
+                            <span class="content-quality text-green" data-testid="quality-netflix-2">1080p HD</span>
+                            <button onclick="downloadContent('2', 'Money Heist')" class="btn btn-download btn-netflix" data-testid="button-download-netflix-2">
+                                <span class="btn-icon">⬇</span>
+                                <span class="btn-text">Download</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-card" data-testid="card-netflix-3">
+                    <img src="https://images.unsplash.com/photo-1635805737707-575885ab0820?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&h=600" alt="Black Mirror" class="content-image" data-testid="img-netflix-3">
+                    <div class="content-info">
+                        <h3 class="content-title" data-testid="title-netflix-3">Black Mirror</h3>
+                        <p class="content-description" data-testid="description-netflix-3">Dystopian sci-fi anthology</p>
+                        <div class="content-actions">
+                            <span class="content-quality text-green" data-testid="quality-netflix-3">4K Ultra HD</span>
+                            <button onclick="downloadContent('3', 'Black Mirror')" class="btn btn-download btn-netflix" data-testid="button-download-netflix-3">
+                                <span class="btn-icon">⬇</span>
+                                <span class="btn-text">Download</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-card" data-testid="card-netflix-4">
+                    <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&h=600" alt="The Irishman" class="content-image" data-testid="img-netflix-4">
+                    <div class="content-info">
+                        <h3 class="content-title" data-testid="title-netflix-4">The Irishman</h3>
+                        <p class="content-description" data-testid="description-netflix-4">Crime epic drama film</p>
+                        <div class="content-actions">
+                            <span class="content-quality text-green" data-testid="quality-netflix-4">4K Ultra HD</span>
+                            <button onclick="downloadContent('4', 'The Irishman')" class="btn btn-download btn-netflix" data-testid="button-download-netflix-4">
+                                <span class="btn-icon">⬇</span>
+                                <span class="btn-text">Download</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Anime Section -->
+    <section id="anime" class="content-section bg-dark-primary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-testid="section-title-anime">
+                    <span class="text-cyber-blue">Anime</span> Collection
+                </h2>
+                <p class="section-subtitle" data-testid="section-subtitle-anime">
+                    Premium anime series and movies. From classic shows to the latest releases, all in high quality.
+                </p>
+            </div>
+            
+            <div class="content-grid">
+                <div class="content-card" data-testid="card-anime-1">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&h=600" alt="Attack on Titan" class="content-image" data-testid="img-anime-1">
+                    <div class="content-info">
+                        <h3 class="content-title" data-testid="title-anime-1">Attack on Titan</h3>
+                        <p class="content-description" data-testid="description-anime-1">Action, Drama, Fantasy</p>
+                        <div class="content-actions">
+                            <span class="content-quality text-cyber-blue" data-testid="quality-anime-1">1080p HD</span>
+                            <button onclick="downloadContent('1', 'Attack on Titan')" class="btn btn-download btn-cyber" data-testid="button-download-anime-1">
+                                <span class="btn-icon">⬇</span>
+                                <span class="btn-text">Download</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-card" data-testid="card-anime-2">
+                    <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&h=600" alt="Spirited Away" class="content-image" data-testid="img-anime-2">
+                    <div class="content-info">
+                        <h3 class="content-title" data-testid="title-anime-2">Spirited Away</h3>
+                        <p class="content-description" data-testid="description-anime-2">Adventure, Family, Fantasy</p>
+                        <div class="content-actions">
+                            <span class="content-quality text-cyber-blue" data-testid="quality-anime-2">4K Ultra HD</span>
+                            <button onclick="downloadContent('2', 'Spirited Away')" class="btn btn-download btn-cyber" data-testid="button-download-anime-2">
+                                <span class="btn-icon">⬇</span>
+                                <span class="btn-text">Download</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-card" data-testid="card-anime-3">
+                    <img src="https://images.unsplash.com/photo-1607887563897-bc45c44b3aa7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&h=600" alt="Demon Slayer" class="content-image" data-testid="img-anime-3">
+                    <div class="content-info">
+                        <h3 class="content-title" data-testid="title-anime-3">Demon Slayer</h3>
+                        <p class="content-description" data-testid="description-anime-3">Action, Supernatural</p>
+                        <div class="content-actions">
+                            <span class="content-quality text-cyber-blue" data-testid="quality-anime-3">1080p HD</span>
+                            <button onclick="downloadContent('3', 'Demon Slayer')" class="btn btn-download btn-cyber" data-testid="button-download-anime-3">
+                                <span class="btn-icon">⬇</span>
+                                <span class="btn-text">Download</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-card" data-testid="card-anime-4">
+                    <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&h=600" alt="One Piece" class="content-image" data-testid="img-anime-4">
+                    <div class="content-info">
+                        <h3 class="content-title" data-testid="title-anime-4">One Piece</h3>
+                        <p class="content-description" data-testid="description-anime-4">Adventure, Comedy, Drama</p>
+                        <div class="content-actions">
+                            <span class="content-quality text-cyber-blue" data-testid="quality-anime-4">1080p HD</span>
+                            <button onclick="downloadContent('4', 'One Piece')" class="btn btn-download btn-cyber" data-testid="button-download-anime-4">
+                                <span class="btn-icon">⬇</span>
+                                <span class="btn-text">Download</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fonts Section -->
+    <section id="fonts" class="content-section bg-dark-secondary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-testid="section-title-fonts">
+                    Premium <span class="text-yellow">Fonts</span>
+                </h2>
+                <p class="section-subtitle" data-testid="section-subtitle-fonts">
+                    Professional typography collection. High-quality fonts for all your design projects.
+                </p>
+            </div>
+            
+            <div class="font-grid">
+                <div class="font-card" data-testid="card-font-1">
+                    <div class="font-preview">
+                        <h3 class="font-title font-inter" data-testid="title-font-1">Montserrat</h3>
+                        <p class="font-category" data-testid="category-font-1">Sans-serif, Modern</p>
+                    </div>
+                    <div class="font-samples">
+                        <p class="font-sample font-inter" data-testid="preview-text-font-1">The quick brown fox</p>
+                        <p class="font-sample-upper font-inter" data-testid="preview-uppercase-font-1">ABCDEFGHIJKLMNOP</p>
+                        <p class="font-sample-lower font-inter" data-testid="preview-lowercase-font-1">abcdefghijklmnop</p>
+                    </div>
+                    <div class="font-actions">
+                        <div class="font-details">
+                            <span class="font-weights text-yellow" data-testid="weights-font-1">18 Weights</span>
+                            <p class="font-formats" data-testid="formats-font-1">OTF, TTF, WOFF</p>
+                        </div>
+                        <button onclick="downloadFont('1', 'Montserrat')" class="btn btn-download btn-yellow" data-testid="button-download-font-1">
+                            <span class="btn-icon">⬇</span>
+                            <span class="btn-text">Download</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="font-card" data-testid="card-font-2">
+                    <div class="font-preview">
+                        <h3 class="font-title font-roboto" data-testid="title-font-2">Roboto</h3>
+                        <p class="font-category" data-testid="category-font-2">Sans-serif, Geometric</p>
+                    </div>
+                    <div class="font-samples">
+                        <p class="font-sample font-roboto" data-testid="preview-text-font-2">The quick brown fox</p>
+                        <p class="font-sample-upper font-roboto" data-testid="preview-uppercase-font-2">ABCDEFGHIJKLMNOP</p>
+                        <p class="font-sample-lower font-roboto" data-testid="preview-lowercase-font-2">abcdefghijklmnop</p>
+                    </div>
+                    <div class="font-actions">
+                        <div class="font-details">
+                            <span class="font-weights text-yellow" data-testid="weights-font-2">12 Weights</span>
+                            <p class="font-formats" data-testid="formats-font-2">OTF, TTF, WOFF</p>
+                        </div>
+                        <button onclick="downloadFont('2', 'Roboto')" class="btn btn-download btn-yellow" data-testid="button-download-font-2">
+                            <span class="btn-icon">⬇</span>
+                            <span class="btn-text">Download</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="font-card" data-testid="card-font-3">
+                    <div class="font-preview">
+                        <h3 class="font-title font-serif" data-testid="title-font-3">Playfair</h3>
+                        <p class="font-category" data-testid="category-font-3">Serif, Display</p>
+                    </div>
+                    <div class="font-samples">
+                        <p class="font-sample font-serif" data-testid="preview-text-font-3">The quick brown fox</p>
+                        <p class="font-sample-upper font-serif" data-testid="preview-uppercase-font-3">ABCDEFGHIJKLMNOP</p>
+                        <p class="font-sample-lower font-serif" data-testid="preview-lowercase-font-3">abcdefghijklmnop</p>
+                    </div>
+                    <div class="font-actions">
+                        <div class="font-details">
+                            <span class="font-weights text-yellow" data-testid="weights-font-3">6 Weights</span>
+                            <p class="font-formats" data-testid="formats-font-3">OTF, TTF, WOFF</p>
+                        </div>
+                        <button onclick="downloadFont('3', 'Playfair')" class="btn btn-download btn-yellow" data-testid="button-download-font-3">
+                            <span class="btn-icon">⬇</span>
+                            <span class="btn-text">Download</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assets Section -->
+    <section id="assets" class="content-section bg-dark-primary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-testid="section-title-assets">
+                    Digital <span class="text-purple">Assets</span>
+                </h2>
+                <p class="section-subtitle" data-testid="section-subtitle-assets">
+                    High-quality graphics, overlays, and design elements for your creative projects.
+                </p>
+            </div>
+            
+            <div class="content-grid">
+                <div class="content-card" data-testid="card-asset-1">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&h=600" alt="Geometric Overlays" class="content-image" data-testid="img-asset-1">
+                    <div class="content-info">
+                        <h3 class="content-title" data-testid="title-asset-1">Geometric Overlays</h3>
+                        <p class="content-description" data-testid="description-asset-1">Abstract design elements</p>
+                        <div class="content-actions">
+                            <span class="content-quality text-cyber-blue" data-testid="quality-asset-1">PNG, SVG</span>
+                            <button onclick="downloadContent('1', 'Geometric Overlays')" class="btn btn-download btn-cyber" data-testid="button-download-asset-1">
+                                <span class="btn-icon">⬇</span>
+                                <span class="btn-text">Download</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-card" data-testid="card-asset-2">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&h=600" alt="Tech Overlays" class="content-image" data-testid="img-asset-2">
+                    <div class="content-info">
+                        <h3 class="content-title" data-testid="title-asset-2">Tech Overlays</h3>
+                        <p class="content-description" data-testid="description-asset-2">Digital interface elements</p>
+                        <div class="content-actions">
+                            <span class="content-quality text-cyber-blue" data-testid="quality-asset-2">MP4, PNG</span>
+                            <button onclick="downloadContent('2', 'Tech Overlays')" class="btn btn-download btn-cyber" data-testid="button-download-asset-2">
+                                <span class="btn-icon">⬇</span>
+                                <span class="btn-text">Download</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-card" data-testid="card-asset-3">
+                    <img src="https://images.unsplash.com/photo-1558346648-9757f2fa4474?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&h=600" alt="Texture Pack" class="content-image" data-testid="img-asset-3">
+                    <div class="content-info">
+                        <h3 class="content-title" data-testid="title-asset-3">Texture Pack</h3>
+                        <p class="content-description" data-testid="description-asset-3">Premium textures</p>
+                        <div class="content-actions">
+                            <span class="content-quality text-cyber-blue" data-testid="quality-asset-3">JPG, PNG</span>
+                            <button onclick="downloadContent('3', 'Texture Pack')" class="btn btn-download btn-cyber" data-testid="button-download-asset-3">
+                                <span class="btn-icon">⬇</span>
+                                <span class="btn-text">Download</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-card" data-testid="card-asset-4">
+                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&h=600" alt="Icon Pack" class="content-image" data-testid="img-asset-4">
+                    <div class="content-info">
+                        <h3 class="content-title" data-testid="title-asset-4">Icon Pack</h3>
+                        <p class="content-description" data-testid="description-asset-4">500+ premium icons</p>
+                        <div class="content-actions">
+                            <span class="content-quality text-cyber-blue" data-testid="quality-asset-4">SVG, PNG</span>
+                            <button onclick="downloadContent('4', 'Icon Pack')" class="btn btn-download btn-cyber" data-testid="button-download-asset-4">
+                                <span class="btn-icon">⬇</span>
+                                <span class="btn-text">Download</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <h3 class="footer-brand" data-testid="footer-brand">
+                        <span class="brand-content">Content</span><span class="brand-hub">Hub</span>
+                    </h3>
+                    <p class="footer-description" data-testid="footer-description">
+                        Your premier destination for high-quality digital downloads. Netflix content, anime series, premium fonts, and creative assets.
+                    </p>
+                    <div class="social-links">
+                        <button class="social-btn" data-testid="social-twitter">🐦</button>
+                        <button class="social-btn" data-testid="social-facebook">📘</button>
+                        <button class="social-btn" data-testid="social-instagram">📷</button>
+                        <button class="social-btn" data-testid="social-youtube">📺</button>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 class="footer-links-title" data-testid="footer-links-title">Quick Links</h4>
+                    <ul class="footer-nav">
+                        <li><button onclick="scrollToSection('netflix')" class="footer-link" data-testid="footer-link-netflix">Netflix</button></li>
+                        <li><button onclick="scrollToSection('anime')" class="footer-link" data-testid="footer-link-anime">Anime</button></li>
+                        <li><button onclick="scrollToSection('fonts')" class="footer-link" data-testid="footer-link-fonts">Fonts</button></li>
+                        <li><button onclick="scrollToSection('assets')" class="footer-link" data-testid="footer-link-assets">Assets</button></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-support">
+                    <h4 class="footer-support-title" data-testid="footer-support-title">Support</h4>
+                    <ul class="footer-nav">
+                        <li><button class="footer-link" data-testid="footer-contact">Contact</button></li>
+                        <li><button class="footer-link" data-testid="footer-terms">Terms of Service</button></li>
+                        <li><button class="footer-link" data-testid="footer-privacy">Privacy Policy</button></li>
+                        <li><button class="footer-link" data-testid="footer-faq">FAQ</button></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="footer-copyright" data-testid="footer-copyright">
+                        © 2024 ContentHub. All rights reserved.
+                    </p>
+                    <div class="footer-legal">
+                        <button class="footer-legal-link" data-testid="footer-license">License Agreement</button>
+                        <button class="footer-legal-link" data-testid="footer-download-terms">Download Terms</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
